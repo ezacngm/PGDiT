@@ -10,21 +10,21 @@
 ## Prepare data and pretrained model
 **Dataset:**  
 We use the same data & processing strategy following U-Mamba. Download dataset from HCP offical website.
-We provide data processing ipynb, run gen_dataset.ipynb
+We provide data processing ipynb, run gen_dataset.ipynb'.
 
 **HCP-pretrained model:**  
-We provide the model checkpoint of PGDiT size XL/3 and put it into `pretrained/PGDiT_200000_mask94_ema.pth`
+We provide the model checkpoint of PGDiT size XL/3 and put it into `model/PGDiT_200000.pth`
 
 ## Training and Sampling
 **Training:**  
 ```bash
-python -m train.py --config hcp_dit.
+python -m train.py --config hcp_dit_cond.yaml
 ```
 you may adjust model size, patch size and buffered DiT layers in the `model/models.py `according to your training environment. 
 
 **Sampling:**  
 ```bash
-python -m sample.py --config hcp_dit.
+python -m sample.py --config hcp_dit_cond.yaml
 ```
 
 ## Acknowledgement
